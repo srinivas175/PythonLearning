@@ -1,0 +1,16 @@
+## Function based Decorators
+
+# Without args in decorators
+
+import functools
+
+def count_calls(func):
+   def wrapper(*args, **kwargs):
+      func(*args,**kwargs)
+   return wrapper
+  
+@count_calls
+def printName(name):
+    print(f'My name is {name}')
+   
+printName('Sunny')
